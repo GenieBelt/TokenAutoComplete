@@ -9,6 +9,7 @@ import android.os.Build;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.support.annotation.NonNull;
+import android.support.v7.widget.AppCompatMultiAutoCompleteTextView;
 import android.text.Editable;
 import android.text.InputFilter;
 import android.text.InputType;
@@ -49,7 +50,7 @@ import java.util.List;
  *
  * @author mgod
  */
-public abstract class TokenCompleteTextView<T> extends MultiAutoCompleteTextView implements TextView.OnEditorActionListener {
+public abstract class TokenCompleteTextView<T> extends AppCompatMultiAutoCompleteTextView implements TextView.OnEditorActionListener {
     //Logging
     public static final String TAG = "TokenAutoComplete";
 
@@ -98,7 +99,7 @@ public abstract class TokenCompleteTextView<T> extends MultiAutoCompleteTextView
     private boolean savingState = false;
     private boolean shouldFocusNext = false;
     private boolean allowCollapse = true;
-    
+
     private int tokenLimit = -1;
 
     /**
@@ -342,7 +343,7 @@ public abstract class TokenCompleteTextView<T> extends MultiAutoCompleteTextView
     public void allowCollapse(boolean allowCollapse) {
         this.allowCollapse = allowCollapse;
     }
-    
+
     /**
      * Set a number of tokens limit.
      * @param tokenLimit The number of tokens permitted. -1 value disables limit.
@@ -351,7 +352,7 @@ public abstract class TokenCompleteTextView<T> extends MultiAutoCompleteTextView
     public void setTokenLimit(int tokenLimit){
         this.tokenLimit = tokenLimit;
     }
-    
+
     /**
      * A token view for the object
      *
